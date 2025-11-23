@@ -549,6 +549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1770944794}
+  mousePosInputAction: {fileID: -395803557828976497, guid: 24375c7be77a34df38206b0db5868483, type: 3}
   lookAtOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &410087039
 GameObject:
@@ -1314,6 +1315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   playerRb: {fileID: 1770944795}
   movenentInputAction: {fileID: 4403587208261402620, guid: 24375c7be77a34df38206b0db5868483, type: 3}
+  boostingInputAction: {fileID: 2242282063675839559, guid: 24375c7be77a34df38206b0db5868483, type: 3}
   camCenter: {fileID: 1776384866}
   camCenterScript: {fileID: 1776384865}
   playerObj: {fileID: 1857942102}

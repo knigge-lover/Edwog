@@ -7,12 +7,14 @@ public class PlayerController : MonoBehaviour
 {
     public Rigidbody playerRb;
     [SerializeField] private InputActionReference movenentInputAction;
+    [SerializeField] private InputActionReference boostingInputAction;
     [SerializeField] private Transform camCenter;
     [SerializeField] private CamCenter camCenterScript;
     [SerializeField] private Transform playerObj;
     [SerializeField] protected Animator playerAnimator;
     private float camLerpSpeed = 0.09f;
     private float playerSpeed = 0.7f;
+    private float playerBoostSpeed = 1.5f;
     private float landingHeightBrake = 5f;
     private float landingHeightBrake2 = 0.4f;
     private float falloffSpeed = 1.1f;
@@ -49,10 +51,20 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        float boosting = boostingInputAction.action.ReadValue<float>();
+        float currentSpeed = (boosting * playerBoostSpeed) * playerSpeed + 1;
+        if (boosting == 1)
+        {
+            playerAnimator.SetBool("Boosting", true);
+        } else
+        {
+            playerAnimator.SetBool("Boosting", false);
+        }
+
         //some player movement
         Vector2 direction2d = movenentInputAction.action.ReadValue<Vector2>();
         Vector3 direction3d = new Vector3(-direction2d.y, 0, direction2d.x);
-        playerRb.AddForce(camCenter.rotation * direction3d * playerSpeed, ForceMode.VelocityChange);
+        playerRb.AddForce(camCenter.rotation * direction3d * currentSpeed, ForceMode.VelocityChange);
 
         //camera stuff
         Vector3 lookAtPos = new Vector3(direction2d.x, 0, direction2d.y);
@@ -71,6 +83,7 @@ public class PlayerController : MonoBehaviour
         } else
         {
             playerAnimator.SetBool("Moving", false);
+            playerAnimator.SetBool("Boosting", false);
         }
 
         //raycast sutff to make landings nicer
