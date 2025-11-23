@@ -1381,7 +1381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
   mousePosInputAction: {fileID: -395803557828976497, guid: 24375c7be77a34df38206b0db5868483, type: 3}
-  camFollowSpeed: 0.1
+  camFollowSpeed: 0.05
   cameraScript: {fileID: 330585548}
 --- !u!4 &1776384866
 Transform:
