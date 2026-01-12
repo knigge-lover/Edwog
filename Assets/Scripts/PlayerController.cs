@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private InputActionReference movenentInputAction;
     [SerializeField] private InputActionReference boostingInputAction;
     [SerializeField] private Transform camCenter;
-    [SerializeField] private CamCenter camCenterScript;
     [SerializeField] private Transform playerObj;
     [SerializeField] protected Animator playerAnimator;
     private float camLerpSpeed = 0.09f;
@@ -17,10 +16,11 @@ public class PlayerController : MonoBehaviour
     private float playerBoostSpeed = 1.5f;
     private float landingHeightBrake = 5f;
     private float landingHeightBrake2 = 0.4f;
-    private float falloffSpeed = 1.1f;
-    private float falloffSpeed2 = 5f;
+    private float falloffSpeed = 0.1f;
+    private float falloffSpeed2 = 0.25f;
+    private float dtModifier = 50f;
 
-    // define a speed, at what the player wiches to the "walk" animation.
+    // define a speed, at what the player swiches to the "walk" animation.
     [SerializeField] private float speedForAnim = 1f;
 
     // ENCAPSULATION
@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        Application.targetFrameRate = 100;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -86,7 +87,7 @@ public class PlayerController : MonoBehaviour
             playerAnimator.SetBool("Boosting", false);
         }
 
-        //raycast sutff to make landings nicer
+        //raycast stuff to make landings nicer
         Ray landingRay = new Ray(transform.position, Vector3.down);
         RaycastHit groundHit;
         
@@ -95,12 +96,13 @@ public class PlayerController : MonoBehaviour
             if (groundHit.collider.tag == "Ground" && groundHit.distance < landingHeightBrake)
             {
                 Vector3 rbVel = playerRb.linearVelocity;
-                if (groundHit.collider.tag == "Ground" && groundHit.distance < landingHeightBrake2)
+                float adjustedDt = Time.deltaTime * dtModifier;
+                if (groundHit.distance < landingHeightBrake2)
                 {
-                    rbVel.y /= falloffSpeed2;
+                    rbVel.y = Mathf.Lerp(rbVel.y, falloffSpeed2, falloffSpeed2 * adjustedDt);
                 } else
                 {
-                    rbVel.y /= falloffSpeed;
+                    rbVel.y = Mathf.Lerp(rbVel.y, falloffSpeed, falloffSpeed * adjustedDt);
                 }
                 playerRb.linearVelocity = rbVel;
             }

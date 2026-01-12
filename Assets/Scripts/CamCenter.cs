@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,17 +8,19 @@ using UnityEngine.InputSystem;
 public class CamCenter : MonoBehaviour
 {
     [SerializeField] private InputActionReference mousePosInputAction;
-    [SerializeField] private float camFollowSpeed;
     [SerializeField] private CameraScript cameraScript;
-
-    private void Start()
+    [SerializeField] protected float camRotSpeedx;
+    private float x;
+    
+    void Start()
     {
 
     }
-
-    void FixedUpdate()
+    
+    void LateUpdate()
     {
-        transform.position = Vector3.Lerp(transform.position, cameraScript.player.position, camFollowSpeed);
-        transform.Rotate(new Vector3(0, mousePosInputAction.action.ReadValue<Vector2>().x, 0));
+        x = mousePosInputAction.action.ReadValue<Vector2>().x; 
+        transform.position = cameraScript.player.position;
+        transform.Rotate(0, (x * camRotSpeedx) * Time.deltaTime, 0);
     }
 }
