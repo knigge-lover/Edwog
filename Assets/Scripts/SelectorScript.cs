@@ -6,19 +6,23 @@ using System.Collections;
 
 public class SelectorScript : MonoBehaviour
 {
-    [SerializeField] private GameObject[] positionsOfItems;
-    private int currentSelectedIndex = 0;
+    [SerializeField] public GameObject[] positionsOfItems;
+    public int currentSelectedIndex = 0;
     private float selectorSpeed = 7f;
     private float selectorXOffset = -0f;
     
     void Update()
     {
-        Transform item = positionsOfItems[currentSelectedIndex].transform;
-        float roundedItemPos = Mathf.Round(10 * positionsOfItems[currentSelectedIndex].transform.position.y) / 10;
-        float roundedPos = Mathf.Round(10 * transform.position.y) / 10;
-        if (roundedPos != roundedItemPos)
+        if (positionsOfItems.Length >= currentSelectedIndex + 1)
         {
-            animate(item);
+            Debug.Log("current Index: " + (currentSelectedIndex + 1) + " Length of items: " + positionsOfItems.Length + " Items: ");
+            Transform item = positionsOfItems[currentSelectedIndex].transform;
+            float roundedItemPos = Mathf.Round(10 * positionsOfItems[currentSelectedIndex].transform.position.y) / 10;
+            float roundedPos = Mathf.Round(10 * transform.position.y) / 10;
+            if (roundedPos != roundedItemPos)
+            {
+                animate(item);
+            }
         }
     }
 

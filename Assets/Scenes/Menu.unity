@@ -131,6 +131,8 @@ GameObject:
   - component: {fileID: 125137128}
   - component: {fileID: 125137127}
   - component: {fileID: 125137126}
+  - component: {fileID: 125137129}
+  - component: {fileID: 125137130}
   m_Layer: 5
   m_Name: quitbutton
   m_TagString: Untagged
@@ -201,7 +203,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 125137127}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 125137129}
+        m_TargetAssemblyTypeName: QuitButton, Assembly-CSharp
+        m_MethodName: Action
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &125137127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,6 +254,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 125137124}
   m_CullTransparentMesh: 1
+--- !u!114 &125137129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125137124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 722ec7d9f6e9b4598a0dae68989de1c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuitButton
+  driftAwaySpeed: 12
+  buttonGroup: []
+--- !u!225 &125137130
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125137124}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &125859426
 GameObject:
   m_ObjectHideFlags: 0
@@ -5836,6 +5876,7 @@ GameObject:
   - component: {fileID: 1192700377}
   - component: {fileID: 1192700376}
   - component: {fileID: 1192700379}
+  - component: {fileID: 1192700380}
   m_Layer: 5
   m_Name: playbutton
   m_TagString: Untagged
@@ -5906,7 +5947,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1192700377}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1192700379}
+        m_TargetAssemblyTypeName: PlayButton, Assembly-CSharp
+        m_MethodName: Action
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1192700377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5957,6 +6010,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bedfb6ea401a4107becb3ce9d47eed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayButton
+  driftAwaySpeed: 10
+  buttonGroup: []
+--- !u!225 &1192700380
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192700374}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1197294124
 GameObject:
   m_ObjectHideFlags: 0
@@ -6517,6 +6584,8 @@ GameObject:
   - component: {fileID: 2051741193}
   - component: {fileID: 2051741192}
   - component: {fileID: 2051741191}
+  - component: {fileID: 2051741194}
+  - component: {fileID: 2051741195}
   m_Layer: 5
   m_Name: creditsbutton
   m_TagString: Untagged
@@ -6587,7 +6656,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2051741192}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2051741194}
+        m_TargetAssemblyTypeName: CreditsButton, Assembly-CSharp
+        m_MethodName: Action
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2051741192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6626,6 +6707,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2051741189}
   m_CullTransparentMesh: 1
+--- !u!114 &2051741194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051741189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd284da2facd547d1a546dda9e9445b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CreditsButton
+  driftAwaySpeed: 11
+  buttonGroup:
+  - {fileID: 1192700379}
+  - {fileID: 125137129}
+--- !u!225 &2051741195
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051741189}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
