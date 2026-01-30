@@ -42,6 +42,7 @@ public class GameController : MonoBehaviour
                 btnScript.ResetTransform();
                 btn.transform.position += new Vector3(btnScript.spawnPosOffsetForDrift, 0, 0);
                 btnScript.spawnDriftActive = true;
+                btnScript.lastXSpawn = btn.transform.position.x;
             }
             else
             {

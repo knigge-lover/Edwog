@@ -5696,15 +5696,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8957068629350728149, guid: 8e6d21bc13e4946babb3dbacb1c0a32a, type: 3}
       propertyPath: fadeOutSpeed
-      value: 2.8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8957068629350728149, guid: 8e6d21bc13e4946babb3dbacb1c0a32a, type: 3}
       propertyPath: driftAwaySpeed
-      value: 0.75
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8957068629350728149, guid: 8e6d21bc13e4946babb3dbacb1c0a32a, type: 3}
       propertyPath: spawnDriftSpeed
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8957068629350728149, guid: 8e6d21bc13e4946babb3dbacb1c0a32a, type: 3}
       propertyPath: buttonGroup.Array.size
@@ -5712,7 +5712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8957068629350728149, guid: 8e6d21bc13e4946babb3dbacb1c0a32a, type: 3}
       propertyPath: spawnPosOffsetForDrift
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8957068629350728149, guid: 8e6d21bc13e4946babb3dbacb1c0a32a, type: 3}
       propertyPath: 'buttonGroup.Array.data[0]'
@@ -6200,15 +6200,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8957068629350728149, guid: 96fb0d56a5092450da5168c16d3f6413, type: 3}
       propertyPath: fadeOutSpeed
-      value: 2.8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8957068629350728149, guid: 96fb0d56a5092450da5168c16d3f6413, type: 3}
       propertyPath: driftAwaySpeed
-      value: 0.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8957068629350728149, guid: 96fb0d56a5092450da5168c16d3f6413, type: 3}
       propertyPath: spawnDriftSpeed
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8957068629350728149, guid: 96fb0d56a5092450da5168c16d3f6413, type: 3}
       propertyPath: buttonGroup.Array.size
@@ -6216,7 +6216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8957068629350728149, guid: 96fb0d56a5092450da5168c16d3f6413, type: 3}
       propertyPath: spawnPosOffsetForDrift
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6258,11 +6258,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6168185672762343369, guid: d7b549e0919e146ddb9bfe8ce1bf4901, type: 3}
       propertyPath: fadeOutSpeed
-      value: 2.5
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6168185672762343369, guid: d7b549e0919e146ddb9bfe8ce1bf4901, type: 3}
       propertyPath: driftAwaySpeed
-      value: 0.833333
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6168185672762343369, guid: d7b549e0919e146ddb9bfe8ce1bf4901, type: 3}
       propertyPath: 'buttonGroup.Array.data[0]'
@@ -6367,11 +6367,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5282966006403665943, guid: c368a1778469846ca90dd215629faa1c, type: 3}
       propertyPath: fadeOutSpeed
-      value: 2.6
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5282966006403665943, guid: c368a1778469846ca90dd215629faa1c, type: 3}
       propertyPath: driftAwaySpeed
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5282966006403665943, guid: c368a1778469846ca90dd215629faa1c, type: 3}
       propertyPath: buttonGroup.Array.size
@@ -6568,11 +6568,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8957068629350728149, guid: de3e782d699ca44ee968c4962035bada, type: 3}
       propertyPath: fadeOutSpeed
-      value: 2.7
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8957068629350728149, guid: de3e782d699ca44ee968c4962035bada, type: 3}
       propertyPath: driftAwaySpeed
-      value: 1.1666
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8957068629350728149, guid: de3e782d699ca44ee968c4962035bada, type: 3}
       propertyPath: buttonGroup.Array.size

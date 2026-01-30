@@ -29,6 +29,7 @@ public class ButtonScript : MonoBehaviour
     private float currentSpeedX;
     public bool spawnDriftActive = false;
     [HideInInspector] public bool driftAwayB = false;
+    public float lastXSpawn = 0f;
     
     // FUNCTIONS
     
@@ -68,17 +69,30 @@ public class ButtonScript : MonoBehaviour
         transform.Translate(-currentSpeedX * Time.deltaTime, 0, 0);
         canvasGroup.alpha = Mathf.Lerp(canvasGroup.alpha, 0, Time.deltaTime * fadeOutSpeed);
 
-        if (canvasGroup.alpha <= 0.01f)
+        if (canvasGroup.alpha <= 0.001f)
         {
-            Destroy(gameObject);
+            driftAwayB = false;
+            gameObject.SetActive(false);
         }
     }
 
     public void SpawnDrift(float speed, float targetX)
     {
-        float currentPosX = transform.position.x;
-        float nextFramePosX = Mathf.Lerp(currentPosX, targetX, speed * Time.deltaTime);
-        transform.position = new Vector3(nextFramePosX, transform.position.y, transform.position.z);
+        float roundedX = Mathf.Round(transform.position.x);
+        float roundedTargetX = Mathf.Round(targetX);
+        
+        //if conditions is just here for optimisation. so we don't have to Lerp everything even if it ist at the right position.
+        if (roundedX != roundedTargetX)
+        {
+            float currentPosX = transform.position.x;
+            float nextFramePosX = Mathf.Lerp(currentPosX, targetX, speed * Time.deltaTime);
+            transform.position = new Vector3(nextFramePosX, transform.position.y, transform.position.z);
+
+            // it's "simple" math to calculate the alpha.
+            float alpha = 1 - (nextFramePosX - targetX) / Mathf.Abs(targetX - lastXSpawn);
+            canvasGroup.alpha = alpha;
+        }
+        else { spawnDriftActive = false; }
     }
     
     public void ClearSelectorItems()
