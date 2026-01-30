@@ -6,16 +6,17 @@ using UnityEngine;
 public class QuitButton : ButtonScript
 {
     [SerializeField] private ButtonModeEnum mode; // 0 = quit button, 1 = confirmation - yes, 2 = confirmation - no. 
-    
 
     public override void ButtonAction()
     {
+        ClearSelectorItems();
+
         if (mode == ButtonModeEnum.Quit)
         {
-            
+            gameController.LoadMenu(menus.quitConfirm.ToArray(), new Transform[0], true);
         } else if (mode == ButtonModeEnum.Cancel)
         {
-            //LoadMenu();
+            
         } else if (mode == ButtonModeEnum.Confirmation)
         {
             Application.Quit();

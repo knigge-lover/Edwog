@@ -8,28 +8,35 @@ using UnityEngine.UIElements;
 public class ButtonScript : MonoBehaviour
 {
     // constant variables
-    private Vector3 buttonStartPos;
+    public Menus menus;
+    public GameController gameController;
+    private float buttonStartPosX;
     private CanvasGroup canvasGroup;
     protected SelectorScript selector;
     
     // constant serialized-field variables
     [SerializeField] private float driftAwaySpeed = 10f; // Can be accessed individually in the inspector.
     [SerializeField] private float fadeOutSpeed = 3f;
-    
+
+    [SerializeField] private float spawnDriftSpeed = 10f;
+
+    [SerializeField] public float spawnPosOffsetForDrift = 100f;
     
     [SerializeField] private ButtonScript[] buttonGroup; // the other buttons that should drift away if this button is pressed.
     
     // non-constant, accessed by script variables
     private float targetPosX;
     private float currentSpeedX;
-
-    [HideInInspector] bool driftAwayB = false;
+    public bool spawnDriftActive = false;
+    [HideInInspector] public bool driftAwayB = false;
     
     // FUNCTIONS
     
-    private void Awake()
+    private void Start()
     {
-        buttonStartPos = transform.position;
+        buttonStartPosX = transform.position.x;
+        gameController = GameObject.Find("GameManager").GetComponent<GameController>();
+        menus = GameObject.Find("GameManager").GetComponent<Menus>();
         canvasGroup = GetComponent<CanvasGroup>();
         selector = GameObject.Find("selector").GetComponent<SelectorScript>();
     }
@@ -40,6 +47,18 @@ public class ButtonScript : MonoBehaviour
         {
             DriftAway(driftAwaySpeed);
         }
+
+        if (spawnDriftActive)
+        {
+            SpawnDrift(spawnDriftSpeed, buttonStartPosX);
+        }
+    }
+    
+    public void ResetTransform()
+    {
+        transform.position = new Vector3(buttonStartPosX, transform.position.y, transform.position.z);
+        //transform.rotation = buttonStartPosX;
+        //transform.localScale = buttonStartPosX;
     }
     
     // This ist the function that generates a smooth drift-away effect if you press the button. 
@@ -47,9 +66,9 @@ public class ButtonScript : MonoBehaviour
     {
         currentSpeedX += speed;
         transform.Translate(-currentSpeedX * Time.deltaTime, 0, 0);
-        canvasGroup.alpha -= Time.deltaTime * fadeOutSpeed;
+        canvasGroup.alpha = Mathf.Lerp(canvasGroup.alpha, 0, Time.deltaTime * fadeOutSpeed);
 
-        if (canvasGroup.alpha <= 0f)
+        if (canvasGroup.alpha <= 0.01f)
         {
             Destroy(gameObject);
         }
@@ -58,7 +77,7 @@ public class ButtonScript : MonoBehaviour
     public void SpawnDrift(float speed, float targetX)
     {
         float currentPosX = transform.position.x;
-        float nextFramePosX = Mathf.Lerp(currentPosX, targetX, speed);
+        float nextFramePosX = Mathf.Lerp(currentPosX, targetX, speed * Time.deltaTime);
         transform.position = new Vector3(nextFramePosX, transform.position.y, transform.position.z);
     }
     

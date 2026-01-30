@@ -13,7 +13,7 @@ public class SelectorScript : MonoBehaviour
     
     void Update()
     {
-        if (positionsOfItems.Length >= currentSelectedIndex + 1)
+        if (positionsOfItems.Length != 0)
         {
             Transform item = positionsOfItems[currentSelectedIndex].transform;
             float roundedItemPos = Mathf.Round(10 * positionsOfItems[currentSelectedIndex].transform.position.y) / 10;

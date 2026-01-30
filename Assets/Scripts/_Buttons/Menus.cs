@@ -5,7 +5,7 @@ using System.Collections.Generic;
 [DefaultExecutionOrder(10)]
 public class Menus : MonoBehaviour
 {
-    // ** This script is just for hardcoding stuff, because I don't know where else to put the hardcoded stuff.
+    // ** This script is just for hardcoding stuff, because I don't know where else to put the hardcoded stuff. **
     
     public List<GameObject> hideAtStart;
     

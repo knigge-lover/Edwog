@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd284da2facd547d1a546dda9e9445b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CreditsButton
-  driftAwaySpeed: 6
+  driftAwaySpeed: 2
   fadeOutSpeed: 0.6
   buttonGroup: []
 --- !u!225 &4137820050729556989

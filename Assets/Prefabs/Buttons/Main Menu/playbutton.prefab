@@ -147,12 +147,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bedfb6ea401a4107becb3ce9d47eed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayButton
-  driftAwaySpeed: 5
+  driftAwaySpeed: 1.666666
   fadeOutSpeed: 0.5
   buttonGroup:
   - {fileID: 0}
   - {fileID: 0}
-  playVariationButtons: []
 --- !u!225 &2646337379781773120
 CanvasGroup:
   m_ObjectHideFlags: 0

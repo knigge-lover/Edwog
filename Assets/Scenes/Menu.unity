@@ -235,12 +235,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1961843154}
-  - {fileID: 335542461}
   - {fileID: 1192700375}
   - {fileID: 2051741190}
   - {fileID: 125137125}
   - {fileID: 1213441681}
   - {fileID: 557594375}
+  - {fileID: 335542461}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5694,6 +5694,30 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8957068629350728149, guid: 8e6d21bc13e4946babb3dbacb1c0a32a, type: 3}
+      propertyPath: fadeOutSpeed
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957068629350728149, guid: 8e6d21bc13e4946babb3dbacb1c0a32a, type: 3}
+      propertyPath: driftAwaySpeed
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957068629350728149, guid: 8e6d21bc13e4946babb3dbacb1c0a32a, type: 3}
+      propertyPath: spawnDriftSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957068629350728149, guid: 8e6d21bc13e4946babb3dbacb1c0a32a, type: 3}
+      propertyPath: buttonGroup.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957068629350728149, guid: 8e6d21bc13e4946babb3dbacb1c0a32a, type: 3}
+      propertyPath: spawnPosOffsetForDrift
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957068629350728149, guid: 8e6d21bc13e4946babb3dbacb1c0a32a, type: 3}
+      propertyPath: 'buttonGroup.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1975065782}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5919,6 +5943,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01637996a98d4f97b4ad52a94d45ff68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Menus
+  hideAtStart: []
   main: []
   quitConfirm: []
 --- !u!1 &1961843153
@@ -6058,6 +6083,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1961843153}
   m_CullTransparentMesh: 1
+--- !u!114 &1975065782 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8957068629350728149, guid: 96fb0d56a5092450da5168c16d3f6413, type: 3}
+  m_PrefabInstance: {fileID: 1980866145}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 722ec7d9f6e9b4598a0dae68989de1c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuitButton
 --- !u!1001 &1980866145
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6162,6 +6198,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8957068629350728149, guid: 96fb0d56a5092450da5168c16d3f6413, type: 3}
+      propertyPath: fadeOutSpeed
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957068629350728149, guid: 96fb0d56a5092450da5168c16d3f6413, type: 3}
+      propertyPath: driftAwaySpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957068629350728149, guid: 96fb0d56a5092450da5168c16d3f6413, type: 3}
+      propertyPath: spawnDriftSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957068629350728149, guid: 96fb0d56a5092450da5168c16d3f6413, type: 3}
+      propertyPath: buttonGroup.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957068629350728149, guid: 96fb0d56a5092450da5168c16d3f6413, type: 3}
+      propertyPath: spawnPosOffsetForDrift
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6199,6 +6255,14 @@ PrefabInstance:
     - target: {fileID: 4329850621263346903, guid: d7b549e0919e146ddb9bfe8ce1bf4901, type: 3}
       propertyPath: m_Name
       value: playbutton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168185672762343369, guid: d7b549e0919e146ddb9bfe8ce1bf4901, type: 3}
+      propertyPath: fadeOutSpeed
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168185672762343369, guid: d7b549e0919e146ddb9bfe8ce1bf4901, type: 3}
+      propertyPath: driftAwaySpeed
+      value: 0.833333
       objectReference: {fileID: 0}
     - target: {fileID: 6168185672762343369, guid: d7b549e0919e146ddb9bfe8ce1bf4901, type: 3}
       propertyPath: 'buttonGroup.Array.data[0]'
@@ -6301,6 +6365,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 125859430}
     m_Modifications:
+    - target: {fileID: 5282966006403665943, guid: c368a1778469846ca90dd215629faa1c, type: 3}
+      propertyPath: fadeOutSpeed
+      value: 2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5282966006403665943, guid: c368a1778469846ca90dd215629faa1c, type: 3}
+      propertyPath: driftAwaySpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5282966006403665943, guid: c368a1778469846ca90dd215629faa1c, type: 3}
       propertyPath: buttonGroup.Array.size
       value: 2
@@ -6493,6 +6565,14 @@ PrefabInstance:
     - target: {fileID: 5024074514894459353, guid: de3e782d699ca44ee968c4962035bada, type: 3}
       propertyPath: m_Name
       value: quitbutton
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957068629350728149, guid: de3e782d699ca44ee968c4962035bada, type: 3}
+      propertyPath: fadeOutSpeed
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957068629350728149, guid: de3e782d699ca44ee968c4962035bada, type: 3}
+      propertyPath: driftAwaySpeed
+      value: 1.1666
       objectReference: {fileID: 0}
     - target: {fileID: 8957068629350728149, guid: de3e782d699ca44ee968c4962035bada, type: 3}
       propertyPath: buttonGroup.Array.size
