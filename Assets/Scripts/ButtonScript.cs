@@ -4,9 +4,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using Vector2 = System.Numerics.Vector2;
 
 public class ButtonScript : MonoBehaviour
 {
+    // INHERITANCE
+    // multiple button-scripts inherit from this script.
+    // I write this because this project is the submission of the Junior Programmer unity learn pathway.
+    
     // constant variables
     public Menus menus;
     public GameController gameController;
@@ -19,7 +24,7 @@ public class ButtonScript : MonoBehaviour
     [SerializeField] private float fadeOutSpeed = 3f;
 
     [SerializeField] private float spawnDriftSpeed = 10f;
-
+    
     [SerializeField] public float spawnPosOffsetForDrift = 100f;
     
     [SerializeField] private ButtonScript[] buttonGroup; // the other buttons that should drift away if this button is pressed.
@@ -48,18 +53,25 @@ public class ButtonScript : MonoBehaviour
         {
             DriftAway(driftAwaySpeed);
         }
-
-        if (spawnDriftActive)
+        else if (spawnDriftActive)
         {
             SpawnDrift(spawnDriftSpeed, buttonStartPosX);
         }
     }
     
-    public void ResetTransform()
+    public void ResetTransform(Vector3 positions = new Vector3(), bool useDifferentPositions = false)
     {
-        transform.position = new Vector3(buttonStartPosX, transform.position.y, transform.position.z);
-        //transform.rotation = buttonStartPosX;
-        //transform.localScale = buttonStartPosX;
+        Vector3 pos;
+        if (!useDifferentPositions)
+        {
+            pos = new Vector3(buttonStartPosX, transform.position.y, transform.position.z);
+        }
+        else
+        {
+            pos = positions;
+        }
+
+        transform.position = pos;
     }
     
     // This ist the function that generates a smooth drift-away effect if you press the button. 
@@ -72,6 +84,7 @@ public class ButtonScript : MonoBehaviour
         if (canvasGroup.alpha <= 0.001f)
         {
             driftAwayB = false;
+            spawnDriftActive = false;
             gameObject.SetActive(false);
         }
     }
@@ -102,14 +115,14 @@ public class ButtonScript : MonoBehaviour
     }
     
     // Action is what is triggered when the button is pressed, while ButtonAction is the individual action for the button.
-    public void Action()
+    public virtual void Action()
     {
         driftAwayB = true;
+        spawnDriftActive = false;
         for (int i = 0; i < buttonGroup.Length; i++)
         {
             buttonGroup[i].driftAwayB = true;
         }
-        
         ButtonAction();
     }
     

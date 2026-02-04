@@ -5,11 +5,11 @@ using System;
 using System.Collections;
 
 public class SelectorScript : MonoBehaviour
-{
-    [SerializeField] public GameObject[] positionsOfItems;
+{ 
+    public GameObject[] positionsOfItems;
     public int currentSelectedIndex = 0;
     private float selectorSpeed = 7f;
-    private float selectorXOffset = -0f;
+    private float selectorXOffset = 0f;
     
     void Update()
     {
@@ -57,6 +57,6 @@ public class SelectorScript : MonoBehaviour
 
     public void OnEnter()
     {
-        
+        positionsOfItems[currentSelectedIndex].GetComponent<ButtonScript>().Action();
     }
 }

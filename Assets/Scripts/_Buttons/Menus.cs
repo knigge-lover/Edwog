@@ -25,7 +25,9 @@ public class Menus : MonoBehaviour
         // Quit Confirmation Menu
         quitConfirm.Add(GameObject.Find("quitno"));
         quitConfirm.Add(GameObject.Find("quityes"));
-        hideAtStart = quitConfirm;
+        
+        hideAtStart.AddRange(main);
+        hideAtStart.AddRange(quitConfirm);
         
         menusDict.Add("Main", main);
         menusDict.Add("QuitConfirmation", quitConfirm);

@@ -5097,6 +5097,7 @@ GameObject:
   - component: {fileID: 335542463}
   - component: {fileID: 335542462}
   - component: {fileID: 335542465}
+  - component: {fileID: 335542466}
   m_Layer: 5
   m_Name: selector
   m_TagString: Untagged
@@ -5270,6 +5271,62 @@ MonoBehaviour:
   m_DefaultActionMap: Menu
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 1197294126}
+--- !u!114 &335542466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335542460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 335542463}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 335542462}
+        m_TargetAssemblyTypeName: SelectorScript, Assembly-CSharp
+        m_MethodName: OnEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &557594375 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1748626716237711685, guid: 96fb0d56a5092450da5168c16d3f6413, type: 3}
@@ -5704,7 +5761,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8957068629350728149, guid: 8e6d21bc13e4946babb3dbacb1c0a32a, type: 3}
       propertyPath: spawnDriftSpeed
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8957068629350728149, guid: 8e6d21bc13e4946babb3dbacb1c0a32a, type: 3}
       propertyPath: buttonGroup.Array.size
@@ -5712,7 +5769,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8957068629350728149, guid: 8e6d21bc13e4946babb3dbacb1c0a32a, type: 3}
       propertyPath: spawnPosOffsetForDrift
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8957068629350728149, guid: 8e6d21bc13e4946babb3dbacb1c0a32a, type: 3}
       propertyPath: 'buttonGroup.Array.data[0]'
@@ -6208,7 +6265,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8957068629350728149, guid: 96fb0d56a5092450da5168c16d3f6413, type: 3}
       propertyPath: spawnDriftSpeed
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8957068629350728149, guid: 96fb0d56a5092450da5168c16d3f6413, type: 3}
       propertyPath: buttonGroup.Array.size
@@ -6216,7 +6273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8957068629350728149, guid: 96fb0d56a5092450da5168c16d3f6413, type: 3}
       propertyPath: spawnPosOffsetForDrift
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6258,10 +6315,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6168185672762343369, guid: d7b549e0919e146ddb9bfe8ce1bf4901, type: 3}
       propertyPath: fadeOutSpeed
-      value: 12
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6168185672762343369, guid: d7b549e0919e146ddb9bfe8ce1bf4901, type: 3}
       propertyPath: driftAwaySpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168185672762343369, guid: d7b549e0919e146ddb9bfe8ce1bf4901, type: 3}
+      propertyPath: spawnDriftSpeed
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6168185672762343369, guid: d7b549e0919e146ddb9bfe8ce1bf4901, type: 3}
@@ -6367,10 +6428,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5282966006403665943, guid: c368a1778469846ca90dd215629faa1c, type: 3}
       propertyPath: fadeOutSpeed
-      value: 12
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 5282966006403665943, guid: c368a1778469846ca90dd215629faa1c, type: 3}
       propertyPath: driftAwaySpeed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5282966006403665943, guid: c368a1778469846ca90dd215629faa1c, type: 3}
+      propertyPath: spawnDriftSpeed
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5282966006403665943, guid: c368a1778469846ca90dd215629faa1c, type: 3}
@@ -6568,10 +6633,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8957068629350728149, guid: de3e782d699ca44ee968c4962035bada, type: 3}
       propertyPath: fadeOutSpeed
-      value: 12
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 8957068629350728149, guid: de3e782d699ca44ee968c4962035bada, type: 3}
       propertyPath: driftAwaySpeed
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957068629350728149, guid: de3e782d699ca44ee968c4962035bada, type: 3}
+      propertyPath: spawnDriftSpeed
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8957068629350728149, guid: de3e782d699ca44ee968c4962035bada, type: 3}
