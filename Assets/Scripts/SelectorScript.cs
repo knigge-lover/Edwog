@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using System.Collections;
 
+[DefaultExecutionOrder(1)]
 public class SelectorScript : MonoBehaviour
 { 
     public GameObject[] positionsOfItems;
@@ -16,16 +17,23 @@ public class SelectorScript : MonoBehaviour
         if (positionsOfItems.Length != 0)
         {
             Transform item = positionsOfItems[currentSelectedIndex].transform;
-            float roundedItemPos = Mathf.Round(10 * positionsOfItems[currentSelectedIndex].transform.position.y) / 10;
-            float roundedPos = Mathf.Round(10 * transform.position.y) / 10;
+            Debug.Log(positionsOfItems.Length);
+            Vector2 roundedItemPos = new Vector2(
+                Mathf.Round(10 * positionsOfItems[currentSelectedIndex].transform.position.x) / 10,
+                Mathf.Round(10 * positionsOfItems[currentSelectedIndex].transform.position.y) / 10
+            );
+            Vector2 roundedPos = new Vector2(
+                Mathf.Round(10 * transform.position.x) / 10, 
+                Mathf.Round(10 * transform.position.y) / 10 
+                );
             if (roundedPos != roundedItemPos)
             {
-                animate(item);
+                Animate(item);
             }
         }
     }
 
-    public void animate(Transform item)
+    public void Animate(Transform item)
     {
         float targetLocY = item.position.y;
         float currentLocY = transform.position.y;

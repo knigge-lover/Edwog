@@ -14,10 +14,10 @@ public class GameController : MonoBehaviour
     
     void Start()
     {
+        selectorScript = GameObject.Find("Canvas/selector").GetComponent<SelectorScript>();
         menus = GetComponent<Menus>();
         SetGameObjectsAsInactive(menus.hideAtStart);
         LoadMenu(menus.main.ToArray(), new Vector3[]{}, true);
-        selectorScript = GameObject.Find("Canvas/selector").GetComponent<SelectorScript>();
     }
 
     private void SetGameObjectsAsInactive(List<GameObject> objects)
@@ -35,11 +35,11 @@ public class GameController : MonoBehaviour
             Debug.LogWarning("Given lists don't have same length.");
         }
         
-        ClearSelectorItems();
+        ClearSelectorItems(buttons.Length);
         
         for (int i = 0; i < buttons.Length; i++)
         {
-            selectorScript.positionsOfItems.Append(buttons[i]);
+            selectorScript.positionsOfItems[i] = buttons[i];
             GameObject btn = buttons[i];
             ButtonScript btnScript = btn.GetComponent<ButtonScript>();
             
@@ -57,6 +57,7 @@ public class GameController : MonoBehaviour
                 ButtonSetup(btn, btnScript);
             }
         }
+        selectorScript.currentSelectedIndex = 0;
     }
 
     private void ButtonSetup(GameObject btn, ButtonScript btnScript)
@@ -67,9 +68,9 @@ public class GameController : MonoBehaviour
         btnScript.lastXSpawn = btn.transform.position.x;
     }
     
-    public void ClearSelectorItems()
+    public void ClearSelectorItems(int count)
     {
         Array.Clear(selectorScript.positionsOfItems, 0, selectorScript.positionsOfItems.Length);
-        selectorScript.positionsOfItems = new GameObject[]{};
+        selectorScript.positionsOfItems = new GameObject[count];
     }
 }

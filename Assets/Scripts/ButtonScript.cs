@@ -57,6 +57,8 @@ public class ButtonScript : MonoBehaviour
         {
             SpawnDrift(spawnDriftSpeed, buttonStartPosX);
         }
+
+        ButtonUpdate();
     }
     
     public void ResetTransform(Vector3 positions = new Vector3(), bool useDifferentPositions = false)
@@ -131,4 +133,6 @@ public class ButtonScript : MonoBehaviour
     {
         Debug.Log("Following button was just pressed: " + gameObject.name);
     }
+
+    protected virtual void ButtonUpdate() { }
 }
