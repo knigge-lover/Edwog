@@ -1,18 +1,12 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayButton : ButtonScript
 {
-    private bool clicked = false;
-    
-    protected override void ButtonUpdate()
-    {
-        
-    }
-    
     public override void ButtonAction()
     {
         ClearSelectorItems();
-        clicked = true;
+        SceneManager.LoadScene("Chapter_1");
     }
 }

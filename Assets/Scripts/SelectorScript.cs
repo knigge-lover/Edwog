@@ -17,7 +17,6 @@ public class SelectorScript : MonoBehaviour
         if (positionsOfItems.Length != 0)
         {
             Transform item = positionsOfItems[currentSelectedIndex].transform;
-            Debug.Log(positionsOfItems.Length);
             Vector2 roundedItemPos = new Vector2(
                 Mathf.Round(10 * positionsOfItems[currentSelectedIndex].transform.position.x) / 10,
                 Mathf.Round(10 * positionsOfItems[currentSelectedIndex].transform.position.y) / 10
