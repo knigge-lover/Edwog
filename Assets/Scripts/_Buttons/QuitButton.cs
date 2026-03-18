@@ -13,10 +13,10 @@ public class QuitButton : ButtonScript
 
         if (mode == ButtonModeEnum.Quit)
         {
-            GameControllerLibrary.LoadMenu(menus.quitConfirm.ToArray(), new Vector3[0], true);
+            GameControllerLibrary.LoadMenu(menus.quitConfirm.ToArray(), new Vector3[0], selector, true);
         } else if (mode == ButtonModeEnum.Cancel)
         {
-            GameControllerLibrary.LoadMenu(menus.main.ToArray(), new Vector3[0], SelectorScript);
+            GameControllerLibrary.LoadMenu(menus.main.ToArray(), new Vector3[0], selector, true);
         } else if (mode == ButtonModeEnum.Confirmation)
         {
             Application.Quit();
