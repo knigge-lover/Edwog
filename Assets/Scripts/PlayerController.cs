@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
             if (groundHit.collider.tag == "Ground" && groundHit.distance < landingHeightBrake)
             {
                 Vector3 rbVel = playerRb.linearVelocity;
-                float adjustedDt = Time.deltaTime * dtModifier;
+                float adjustedDt = Time.fixedDeltaTime * dtModifier;
                 if (groundHit.distance < landingHeightBrake2)
                 {
                     rbVel.y = Mathf.Lerp(rbVel.y, falloffSpeed2, falloffSpeed2 * adjustedDt);

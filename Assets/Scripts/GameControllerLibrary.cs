@@ -5,6 +5,10 @@ using System.Collections.Generic;
 
 public static class GameControllerLibrary
 {
+    //========================================//
+    //-----------***Menu Loading***-----------//
+    //========================================//
+    
     private static void ButtonSetup(GameObject btn, ButtonScript btnScript)
     {
         btn.transform.position += new Vector3(btnScript.spawnPosOffsetForDrift, 0, 0);
@@ -21,9 +25,12 @@ public static class GameControllerLibrary
     
     public static void SetGameObjectsAsInactive(List<GameObject> objects)
     {
-        for (int i = 0; i < objects.Count; i++)
+        if (objects != null)
         {
-            objects[i].SetActive(false);
+            for (int i = 0; i < objects.Count; i++)
+            {
+                objects[i].SetActive(false);
+            }
         }
     }
     
@@ -58,6 +65,19 @@ public static class GameControllerLibrary
         }
         selectorScript.currentSelectedIndex = 0;
     }
+    
+    //=======================================//
+    //-----------***Checkpoints***-----------//
+    //=======================================//
 
-   
+    public static void SetCheckpoint(int index, GameController gameController)
+    {
+        Debug.Log("Checkpoint set!");
+        gameController.checkpointIndex = index;
+    }
+    
+    public static void LoadCheckpoint()
+    {
+        Debug.Log("Returning to checkpoint...");
+    }
 }

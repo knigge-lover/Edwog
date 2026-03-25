@@ -3,7 +3,22 @@ guid: 4f39578987e164c8e8d66764e1dcd2e6
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BlueLight
+    second: {fileID: 2100000, guid: fd47c684f30e14f8090bfe9c908aacb5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metallic
+    second: {fileID: 2100000, guid: de1d13240bc5b47c59c0b5b92ef8743f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: half_glow
+    second: {fileID: 2100000, guid: a4d3f5ff5e57542a69e5f0636e14e737, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

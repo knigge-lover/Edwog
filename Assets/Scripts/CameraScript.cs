@@ -10,9 +10,6 @@ public class CameraScript : MonoBehaviour
     [SerializeField] private InputActionReference mousePosInputAction;
     [SerializeField] private Vector3 lookAtOffset;
     private Vector3 currentLookAtOffset;
-    private float camVerticalSensitivity = .03f;
-    private float camVerticalBorder = 10f;
-    private float camVerticalReturnSpeed = 1f;
 
     void LateUpdate()
     {
