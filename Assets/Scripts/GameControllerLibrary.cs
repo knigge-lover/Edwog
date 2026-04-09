@@ -72,7 +72,6 @@ public static class GameControllerLibrary
 
     public static void SetCheckpoint(int index, GameController gameController)
     {
-        Debug.Log("Checkpoint set!");
         gameController.checkpointIndex = index;
     }
     
