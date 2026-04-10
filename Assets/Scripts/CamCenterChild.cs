@@ -7,7 +7,7 @@ public class CamCenterChild : MonoBehaviour
     [SerializeField] private CamCenter camCenterScript;
     [SerializeField] private InputActionReference mousePosInputAction;
     [SerializeField] protected float camRotSpeedy;
-    private const float camBorder = 50f;
+    private float camBorder = 50f;
     private float y;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
