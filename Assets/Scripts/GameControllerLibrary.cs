@@ -70,7 +70,7 @@ public static class GameControllerLibrary
     //-----------***Checkpoints***-----------//
     //=======================================//
 
-    public static void SetCheckpoint(int index, GameController gameController)
+    public static void SetCheckpoint(int index, GameObject checkpointObj, GameController gameController)
     {
         gameController.checkpointIndex = index;
     }

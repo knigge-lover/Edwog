@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CheckpointScript : MonoBehaviour
@@ -11,6 +12,7 @@ public class CheckpointScript : MonoBehaviour
     [SerializeField] private Material currentMaterial;
     [SerializeField] private int index;
     [SerializeField] private MeshRenderer[] meshRenderers;
+    [SerializeField] private float checkpointIndex;
     
     private void Start()
     {
@@ -29,7 +31,7 @@ public class CheckpointScript : MonoBehaviour
             animator.SetBool("Collected", true);
             currentMaterial = checkpointMaterials.glowGreen;
             SetMat(currentMaterial, meshRenderers);
-            GameControllerLibrary.SetCheckpoint(1, gameController);
+            GameControllerLibrary.SetCheckpoint(1, gameObject, gameController);
         }
     }
 
