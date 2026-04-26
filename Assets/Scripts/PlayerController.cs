@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,7 +21,7 @@ public class PlayerController : MonoBehaviour
     private float falloffSpeed2 = 0.25f;
     private float dtModifier = 50f;
 
-    // define a speed, at what the player swiches to the "walk" animation.
+    // define a speed, at what the player switches to the "walk" animation.
     [SerializeField] private float speedForAnim = 1f;
 
     // ENCAPSULATION
@@ -107,5 +108,10 @@ public class PlayerController : MonoBehaviour
                 playerRb.linearVelocity = rbVel;
             }
         }
+    }
+
+    public void Die()
+    {
+        Debug.Log("player died.");
     }
 }
